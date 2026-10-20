@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl';
 import { AppConfig } from '@/utils/AppConfig';
 
 export const BaseTemplate = (props: {
@@ -6,56 +5,41 @@ export const BaseTemplate = (props: {
   rightNav?: React.ReactNode;
   children: React.ReactNode;
 }) => {
-  const t = useTranslations('BaseTemplate');
+  const year = new Date().getFullYear();
 
   return (
-    <div className="w-full px-1 text-gray-700 antialiased">
-      <div className="mx-auto max-w-screen-md">
-        <header className="border-b border-gray-300">
-          <div className="pt-16 pb-8">
-            <h1 className="text-3xl font-bold text-gray-900">
-              {AppConfig.name}
-            </h1>
-            <h2 className="text-xl">{t('description')}</h2>
-          </div>
+    <div className="flex min-h-screen w-full flex-col bg-background text-foreground antialiased">
+      <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
+          <a href="/" className="font-serif text-2xl font-semibold tracking-tight">
+            {AppConfig.name}
+          </a>
 
-          <div className="flex justify-between">
-            <nav aria-label="Main navigation">
-              <ul className="flex flex-wrap gap-x-5 text-xl">
-                {props.leftNav}
-              </ul>
-            </nav>
-
-            <nav>
-              <ul className="flex flex-wrap gap-x-5 text-xl">
+          <nav
+            aria-label="Main navigation"
+            className="flex flex-wrap items-center justify-end gap-x-6 gap-y-2 text-sm font-medium"
+          >
+            <ul className="flex flex-wrap items-center gap-x-6">
+              {props.leftNav}
+            </ul>
+            {props.rightNav ? (
+              <ul className="flex flex-wrap items-center gap-x-6">
                 {props.rightNav}
               </ul>
-            </nav>
-          </div>
-        </header>
+            ) : null}
+          </nav>
+        </div>
+      </header>
 
-        <main>{props.children}</main>
+      <main className="flex-1">{props.children}</main>
 
-        <footer className="border-t border-gray-300 py-8 text-center text-sm">
-          {`© Copyright ${new Date().getFullYear()} ${AppConfig.name}. `}
-          {t.rich('made_with', {
-            author: () => (
-              <a
-                href="https://nextjs-boilerplate.com"
-                className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-              >
-                Next.js Boilerplate
-              </a>
-            ),
-          })}
-          {/*
-           * PLEASE READ THIS SECTION
-           * I'm an indie maker with limited resources and funds, I'll really appreciate if you could have a link to my website.
-           * The link doesn't need to appear on every pages, one link on one page is enough.
-           * For example, in the `About` page. Thank you for your support, it'll mean a lot to me.
-           */}
-        </footer>
-      </div>
+      <footer className="border-t border-border bg-surface">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-8 text-center text-sm text-muted-foreground sm:flex-row sm:text-left">
+          <p>
+            © Copyright {year} {AppConfig.name}. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

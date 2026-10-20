@@ -11,6 +11,10 @@ const handleI18nRouting = createMiddleware(routing);
 const isProtectedRoute = createRouteMatcher([
   '/dashboard(.*)',
   '/:locale/dashboard(.*)',
+  '/create(.*)',
+  '/:locale/create(.*)',
+  '/preview(.*)',
+  '/:locale/preview(.*)',
 ]);
 
 const isAuthPage = createRouteMatcher([
@@ -54,7 +58,8 @@ export default async function proxy(
   ) {
     return clerkMiddleware(async (auth, req) => {
       if (isProtectedRoute(req)) {
-        const locale = req.nextUrl.pathname.match(/(\/.*)\/dashboard/)?.at(1) ?? '';
+        const locale =
+          req.nextUrl.pathname.match(/\/(id|en|fr)(?=\/)/)?.at(1) ?? '';
 
         const signInUrl = new URL(`${locale}/sign-in`, req.url);
 

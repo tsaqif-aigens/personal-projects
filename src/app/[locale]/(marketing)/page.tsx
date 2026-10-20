@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { Sponsors } from '@/components/Sponsors';
+import { FaqSection } from '@/components/landing/FaqSection';
+import { PhoneMockup } from '@/components/landing/PhoneMockup';
+import { SectionHeading } from '@/components/landing/SectionHeading';
+import { ButtonAnchor, ButtonLink } from '@/components/ui/Button';
+import { getI18nPath } from '@/utils/Helpers';
 
 type IIndexProps = {
   params: Promise<{ locale: string }>;
@@ -19,7 +23,7 @@ export async function generateMetadata(props: IIndexProps): Promise<Metadata> {
   };
 }
 
-export default async function Index(props: IIndexProps) {
+export default async function Hero(props: IIndexProps) {
   const { locale } = await props.params;
   setRequestLocale(locale);
   const t = await getTranslations({
@@ -27,108 +31,121 @@ export default async function Index(props: IIndexProps) {
     namespace: 'Index',
   });
 
+  const signInHref = getI18nPath('/sign-in', locale);
+  const steps = [1, 2, 3] as const;
+
   return (
-    <>
-      <p>
-        {`Follow `}
-        <a
-          className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-          href="https://twitter.com/ixartz"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          @Ixartz on Twitter
-        </a>
-        {` for updates and more information about the boilerplate.`}
-      </p>
-      <h2 className="mt-5 text-2xl font-bold">
-        Boilerplate Code for Your Next.js Project with Tailwind CSS
-      </h2>
-      <p className="text-base">
-        Next.js Boilerplate is a developer-friendly starter code for Next.js projects, built with Tailwind CSS and TypeScript.
-        {' '}
-        <span role="img" aria-label="zap">
-          ⚡️
-        </span>
-        {' '}
-        Designed with developer experience in mind, it includes:
-      </p>
-      <ul className="mt-3 text-base">
-        <li>🚀 Next.js with App Router support</li>
-        <li>🔥 TypeScript for type checking</li>
-        <li>💎 Tailwind CSS integration</li>
-        <li>
-          🔒 Authentication with
-          {' '}
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://clerk.com?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=nextjs-boilerplate"
-          >
-            Clerk
-          </a>
-          {' '}
-          (includes passwordless, social, and multi-factor auth)
-        </li>
-        <li>📦 ORM with DrizzleORM (PostgreSQL, SQLite, MySQL support)</li>
-        <li>
-          💽 Dev database with PGlite and production with Neon (PostgreSQL)
-        </li>
-        <li>
-          🌐 Multi-language support (i18n) with next-intl and
-          {' '}
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://l.crowdin.com/next-js"
-          >
-            Crowdin
-          </a>
-        </li>
-        <li>🔴 Form handling (React Hook Form) and validation (Zod)</li>
-        <li>📏 Linting and formatting (ESLint, Prettier)</li>
-        <li>🦊 Git hooks and commit linting (Husky, Commitlint)</li>
-        <li>🦺 Testing suite (Vitest, React Testing Library, Playwright)</li>
-        <li>🎉 Storybook for UI development</li>
-        <li>
-          🐰 AI-powered code reviews with
-          {' '}
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://www.coderabbit.ai?utm_source=next_js_starter&utm_medium=github&utm_campaign=next_js_starter_oss_2025"
-          >
-            CodeRabbit
-          </a>
-        </li>
-        <li>
-          🚨 Error monitoring (
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://sentry.io/for/nextjs/?utm_source=github&amp;utm_medium=paid-community&amp;utm_campaign=general-fy25q1-nextjs&amp;utm_content=github-banner-nextjsboilerplate-logo"
-          >
-            Sentry
-          </a>
-          ) and logging (LogTape, an alternative to Pino.js)
-        </li>
-        <li>🖥️ Monitoring as Code (Checkly)</li>
-        <li>
-          🔐 Security and bot protection (
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://launch.arcjet.com/Q6eLbRE"
-          >
-            Arcjet
-          </a>
-          )
-        </li>
-        <li>🤖 SEO optimization (metadata, JSON-LD, Open Graph tags)</li>
-        <li>⚙️ Development tools (VSCode config, bundler analyzer, changelog generation)</li>
-      </ul>
-      <p className="text-base">
-        Our sponsors&apos; exceptional support has made this project possible.
-        Their services integrate seamlessly with the boilerplate, and we
-        recommend trying them out.
-      </p>
-      <h2 className="mt-5 text-2xl font-bold">{t('sponsors_title')}</h2>
-      <Sponsors />
-    </>
+    <div className="bg-background">
+      {/* Hero */}
+      <section className="bg-linear-to-b from-forest-800 via-forest-700 to-forest-900 text-cream-50">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 sm:py-28 lg:grid-cols-2">
+          <div>
+            <span className="inline-flex items-center rounded-full border border-gold-300/40 bg-gold-400/10 px-4 py-1.5 text-sm font-medium text-gold-200">
+              {t('hero_badge')}
+            </span>
+
+            <h1 className="mt-6 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+              {t('hero_title')}
+            </h1>
+
+            <p className="mt-5 max-w-xl text-lg text-cream-100/85">
+              {t('hero_subtitle')}
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <ButtonLink href={signInHref} size="lg" variant="primary">
+                {t('hero_cta')}
+              </ButtonLink>
+              <ButtonAnchor href="#how" size="lg" variant="secondary">
+                {t('hero_secondary')}
+              </ButtonAnchor>
+            </div>
+          </div>
+
+          <PhoneMockup />
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section id="how" className="mx-auto max-w-6xl px-6 py-20">
+        <SectionHeading title={t('how_title')} subtitle={t('how_subtitle')} />
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          {steps.map(step => (
+            <div
+              key={step}
+              className="rounded-xl border border-border bg-surface p-6 shadow-card"
+            >
+              <div className="flex size-10 items-center justify-center rounded-full bg-primary-soft font-serif text-lg font-semibold text-primary">
+                {step}
+              </div>
+              <h3 className="mt-4 font-serif text-xl font-semibold">
+                {t(`how_step_${step}_title`)}
+              </h3>
+              <p className="mt-2 text-muted-foreground">
+                {t(`how_step_${step}_desc`)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Sample */}
+      <section id="sample" className="bg-surface-muted">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <SectionHeading
+            title={t('sample_title')}
+            subtitle={t('sample_subtitle')}
+          />
+
+          <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-border bg-surface p-8 text-center shadow-card sm:p-10">
+            <p className="font-serif text-2xl font-semibold text-foreground">
+              {t('sample_couple')}
+            </p>
+            <p className="mx-auto mt-4 max-w-md font-serif text-lg text-muted-foreground italic">
+              “{t('sample_quote')}”
+            </p>
+            <p className="mt-6 text-sm text-muted-foreground">
+              {t('sample_venue')}
+            </p>
+            <div className="mt-8">
+              <ButtonLink href={signInHref} variant="secondary">
+                {t('sample_cta')}
+              </ButtonLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="mx-auto max-w-6xl px-6 py-20">
+        <SectionHeading
+          title={t('pricing_title')}
+          subtitle={t('pricing_subtitle')}
+        />
+
+        <div className="mx-auto mt-12 max-w-md rounded-2xl border border-gold-200 bg-surface p-8 text-center shadow-card">
+          <span className="inline-flex items-center rounded-full bg-gold-100 px-4 py-1.5 text-sm font-semibold text-gold-700">
+            {t('pricing_badge')}
+          </span>
+          <p className="mt-4 font-serif text-2xl font-semibold text-foreground">
+            {t('pricing_subtitle')}
+          </p>
+          <div className="mt-8">
+            <ButtonLink href={signInHref}>{t('pricing_cta')}</ButtonLink>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="bg-surface-muted">
+        <div className="mx-auto max-w-3xl px-6 py-20">
+          <SectionHeading title={t('faq_title')} subtitle={t('faq_subtitle')} />
+          <div className="mt-12">
+            <FaqSection />
+          </div>
+        </div>
+      </section>
+    </div>
   );
-};
+}

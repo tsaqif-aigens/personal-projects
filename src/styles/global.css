@@ -1,3 +1,112 @@
 @layer theme, base, clerk, components, utilities; /* Ensure Clerk is compatible with Tailwind CSS v4 */
 
 @import 'tailwindcss';
+
+/*
+ * UndanganAI design tokens (Tailwind CSS v4 — CSS-first config).
+ * These generate utilities: `bg-primary`, `text-muted-foreground`,
+ * `font-serif`, `rounded-lg`, `shadow-card`, etc.
+ *
+ * Palette direction: "Javanese batik" — forest green + cream + muted gold.
+ */
+@theme {
+  /* ---- Typography ---- */
+  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui,
+    -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: var(--font-cormorant-garamond), ui-serif, Georgia, serif;
+  /* Amiri (Quranic verse) is added later; fall back to serif until then. */
+  --font-arabic: var(--font-amiri), ui-serif, serif;
+
+  /* ---- Forest green (primary) ---- */
+  --color-forest-50: #f2f7f1;
+  --color-forest-100: #e0ede0;
+  --color-forest-200: #c2dcc3;
+  --color-forest-300: #98c29c;
+  --color-forest-400: #6aa470;
+  --color-forest-500: #47854e;
+  --color-forest-600: #34693b;
+  --color-forest-700: #2a5430;
+  --color-forest-800: #244429;
+  --color-forest-900: #1e3822;
+  --color-forest-950: #0f1f13;
+
+  /* ---- Gold (accent) ---- */
+  --color-gold-50: #fbf8eb;
+  --color-gold-100: #f6eecb;
+  --color-gold-200: #eedd99;
+  --color-gold-300: #e4c65e;
+  --color-gold-400: #dbb134;
+  --color-gold-500: #c9a227;
+  --color-gold-600: #a97f1d;
+  --color-gold-700: #875f1a;
+  --color-gold-800: #714d1c;
+  --color-gold-900: #61411d;
+  --color-gold-950: #38220d;
+
+  /* ---- Cream (backgrounds) ---- */
+  --color-cream-50: #fefdf9;
+  --color-cream-100: #fdfbf3;
+  --color-cream-200: #faf5e6;
+  --color-cream-300: #f3ecd2;
+  --color-cream-400: #e9ddb4;
+
+  /* ---- Semantic aliases (what components consume) ---- */
+  --color-background: var(--color-cream-100);
+  --color-surface: #ffffff;
+  --color-surface-muted: var(--color-cream-200);
+  --color-foreground: var(--color-forest-900);
+  --color-muted-foreground: #5c6b5f;
+  --color-muted: #8a948c;
+  --color-border: #e5e1d2;
+  --color-border-strong: #d6d0ba;
+  --color-ring: var(--color-gold-500);
+
+  --color-primary: var(--color-forest-700);
+  --color-primary-hover: var(--color-forest-800);
+  --color-primary-foreground: #ffffff;
+  --color-primary-soft: var(--color-forest-50);
+
+  --color-accent: var(--color-gold-500);
+  --color-accent-hover: var(--color-gold-600);
+  --color-accent-foreground: var(--color-forest-950);
+
+  --color-destructive: #b91c1c;
+  --color-destructive-foreground: #ffffff;
+
+  --color-success: #15803d;
+  --color-success-soft: #dcfce7;
+  --color-warning: #b45309;
+  --color-warning-soft: #fef3c7;
+  --color-info: #1d4ed8;
+  --color-info-soft: #dbeafe;
+
+  /* ---- Radius ---- */
+  --radius-sm: 0.5rem; /* 8px */
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-xl: 1.5rem; /* 24px */
+
+  /* ---- Shadows (warm-tinted) ---- */
+  --shadow-card: 0 1px 2px rgb(30 56 34 / 0.04),
+    0 4px 16px rgb(30 56 34 / 0.06);
+  --shadow-card-hover: 0 2px 4px rgb(30 56 34 / 0.06),
+    0 10px 28px rgb(30 56 34 / 0.1);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+}

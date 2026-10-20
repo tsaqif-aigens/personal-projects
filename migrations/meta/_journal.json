@@ -8,6 +8,20 @@
       "when": 1745518076143,
       "tag": "0000_init-db",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1768041475885,
+      "tag": "0001_silly_smasher",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791457728498,
+      "tag": "0002_tough_overlord",
+      "breakpoints": true
     }
   ]
 }

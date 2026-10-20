@@ -12,9 +12,47 @@
     "made_with": "Made with <author></author>."
   },
   "Index": {
-    "meta_title": "Next.js Boilerplate Presentation",
-    "meta_description": "Next js Boilerplate is the perfect starter code for your project. Build your React application with the Next.js framework.",
-    "sponsors_title": "Sponsors"
+    "meta_title": "UndanganAI — AI-Powered Wedding Invitations",
+    "meta_description": "Create beautiful digital wedding invitations from just photos and event details. AI writes the text, picks a theme, and designs the layout.",
+    "hero_badge": "Create in minutes — no design skills needed",
+    "hero_title": "Beautiful wedding invitations, crafted by AI",
+    "hero_subtitle": "Upload your photos and event details. UndanganAI writes the words, chooses an elegant theme, and designs a shareable digital invitation — ready to send to your guests.",
+    "hero_cta": "Get started",
+    "hero_secondary": "See how it works",
+    "hero_phone_label": "Preview",
+    "hero_phone_names": "Arga & Salsabila",
+    "hero_phone_date": "Saturday, 14 June 2026",
+    "hero_phone_cta": "Open invitation",
+    "how_title": "Three steps to a stunning invitation",
+    "how_subtitle": "From photos to a polished invitation in minutes.",
+    "how_step_1_title": "Upload your details",
+    "how_step_1_desc": "Add couple names, event dates, venues, and your favourite photos.",
+    "how_step_2_title": "Let AI design it",
+    "how_step_2_desc": "AI writes the opening words, picks a theme, and lays out every section.",
+    "how_step_3_title": "Share with guests",
+    "how_step_3_desc": "Get a link to share. Guests RSVP and send wishes right from the invitation.",
+    "sample_title": "A sample of what you'll get",
+    "sample_subtitle": "Elegant, mobile-first, and ready to share.",
+    "sample_couple": "Arga & Salsabila",
+    "sample_quote": "With gratitude, we invite you to celebrate the beginning of our life together.",
+    "sample_venue": "Akad Nikah — Saturday, 14 June 2026 · Grand Ballroom",
+    "sample_cta": "Create yours",
+    "pricing_title": "Simple pricing",
+    "pricing_subtitle": "Start free and pay only when you publish.",
+    "pricing_badge": "Coming soon",
+    "pricing_cta": "Join the waitlist",
+    "faq_title": "Frequently asked questions",
+    "faq_subtitle": "Everything you need to know before you start.",
+    "faq_q1": "Do I need design experience?",
+    "faq_a1": "No. You only provide photos and event details — the AI handles the writing, theme, and layout.",
+    "faq_q2": "How do guests RSVP?",
+    "faq_a2": "Each invitation has a built-in RSVP form. Guests confirm their attendance and leave wishes without creating an account.",
+    "faq_q3": "Can I use my own photos?",
+    "faq_a3": "Yes. Upload a cover photo, couple portraits, and a gallery of up to 12 photos.",
+    "faq_q4": "Is the invitation mobile-friendly?",
+    "faq_a4": "Absolutely. Every invitation is designed mobile-first and opens instantly in the browser — no app required.",
+    "faq_q5": "How much does it cost?",
+    "faq_a5": "Creating an invitation is free. You'll only pay a one-time fee when you're ready to publish and share it."
   },
   "Counter": {
     "meta_title": "Counter",
@@ -62,6 +100,19 @@
   "Dashboard": {
     "meta_title": "Dashboard",
     "hello_message": "Hello {email}!",
+    "create_invitation": "Create Invitation",
+    "empty_title": "No invitations yet",
+    "empty_description": "Upload photos and event details, then let the AI craft a beautiful digital wedding invitation for you.",
+    "status_draft": "Draft",
+    "status_preview": "Preview",
+    "status_published": "Active",
+    "status_archived": "Archived",
+    "view_preview": "View preview",
+    "share": "Share",
+    "share_message": "You're invited! Open our wedding invitation: {url}",
+    "copy_link": "Copy link",
+    "copied": "Copied",
+    "no_cover": "No cover photo",
     "alternative_message": "Need advanced features? Multi-tenancy & Teams, Roles & Permissions, Shadcn UI, End-to-End Typesafety with oRPC, Stripe Payment, Light / Dark mode. Try <url></url>."
   },
   "UserProfile": {
@@ -70,6 +121,13 @@
   "DashboardLayout": {
     "dashboard_link": "Dashboard",
     "user_profile_link": "Manage your account",
+    "templates": "Templates",
     "sign_out": "Sign out"
+  },
+  "Template": {
+    "meta_title": "Template",
+    "meta_description": "Dashboard Template page description",
+    "header": "Dashboard Template",
+    "content": "This is a dashboard template page. You can use this page as a starting point for your dashboard pages."
   }
 }

@@ -1,18 +1,19 @@
 import type { LocalizationResource } from '@clerk/types';
 import type { LocalePrefixMode } from 'next-intl/routing';
-import { enUS, frFR } from '@clerk/localizations';
+import { enUS, frFR, idID } from '@clerk/localizations';
 
 const localePrefix: LocalePrefixMode = 'as-needed';
 
 // FIXME: Update this configuration file based on your project information
 export const AppConfig = {
-  name: 'Nextjs Starter',
-  locales: ['en', 'fr'],
-  defaultLocale: 'en',
+  name: 'UndanganAI',
+  locales: ['id', 'en', 'fr'],
+  defaultLocale: 'id',
   localePrefix,
 };
 
 const supportedLocales: Record<string, LocalizationResource> = {
+  id: idID,
   en: enUS,
   fr: frFR,
 };

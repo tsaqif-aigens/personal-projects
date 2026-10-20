@@ -1,11 +1,24 @@
 import type { Metadata } from 'next';
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { PostHogProvider } from '@/components/analytics/PostHogProvider';
-import { DemoBadge } from '@/components/DemoBadge';
 import { routing } from '@/libs/I18nRouting';
 import '@/styles/global.css';
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta-sans',
+  display: 'swap',
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  variable: '--font-cormorant-garamond',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   icons: [
@@ -49,14 +62,12 @@ export default async function RootLayout(props: {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${plusJakartaSans.variable} ${cormorantGaramond.variable}`}>
       <body>
         <NextIntlClientProvider>
           <PostHogProvider>
             {props.children}
           </PostHogProvider>
-
-          <DemoBadge />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,0 +1,133 @@
+{
+  "RootLayout": {
+    "home_link": "Beranda",
+    "about_link": "Tentang",
+    "counter_link": "Penghitung",
+    "portfolio_link": "Portofolio",
+    "sign_in_link": "Masuk",
+    "sign_up_link": "Daftar"
+  },
+  "BaseTemplate": {
+    "description": "Kode awal untuk Nextjs Boilerplate dengan Tailwind CSS",
+    "made_with": "Dibuat dengan <author></author>."
+  },
+  "Index": {
+    "meta_title": "UndanganAI - Undangan Pernikahan Digital dengan AI",
+    "meta_description": "Buat undangan pernikahan digital yang indah hanya dengan foto dan detail acara. AI menulis teks, memilih tema, dan merancang tata letaknya.",
+    "hero_badge": "Buat dalam hitungan menit — tanpa keahlian desain",
+    "hero_title": "Undangan pernikahan yang indah, dirancang oleh AI",
+    "hero_subtitle": "Unggah foto dan detail acara Anda. UndanganAI menuliskan kata-kata, memilih tema yang elegan, dan merancang undangan digital yang siap dibagikan ke para tamu.",
+    "hero_cta": "Mulai Sekarang",
+    "hero_secondary": "Lihat cara kerjanya",
+    "hero_phone_label": "Pratinjau",
+    "hero_phone_names": "Arga & Salsabila",
+    "hero_phone_date": "Sabtu, 14 Juni 2026",
+    "hero_phone_cta": "Buka Undangan",
+    "how_title": "Tiga langkah menuju undangan memukau",
+    "how_subtitle": "Dari foto menjadi undangan yang apik dalam hitungan menit.",
+    "how_step_1_title": "Unggah detail Anda",
+    "how_step_1_desc": "Tambahkan nama pasangan, tanggal acara, lokasi, dan foto favorit Anda.",
+    "how_step_2_title": "Biarkan AI merancangnya",
+    "how_step_2_desc": "AI menulis kata pembuka, memilih tema, dan menata setiap bagian.",
+    "how_step_3_title": "Bagikan ke para tamu",
+    "how_step_3_desc": "Dapatkan tautan untuk dibagikan. Tamu mengonfirmasi kehadiran dan mengirim doa langsung dari undangan.",
+    "sample_title": "Contoh hasil yang akan Anda dapatkan",
+    "sample_subtitle": "Elegan, mobile-first, dan siap dibagikan.",
+    "sample_couple": "Arga & Salsabila",
+    "sample_quote": "Dengan penuh syukur, kami mengundang Anda untuk merayakan awal perjalanan hidup kami bersama.",
+    "sample_venue": "Akad Nikah — Sabtu, 14 Juni 2026 · Grand Ballroom",
+    "sample_cta": "Buat undangan Anda",
+    "pricing_title": "Harga yang sederhana",
+    "pricing_subtitle": "Mulai gratis dan bayar hanya saat Anda mempublikasikan.",
+    "pricing_badge": "Segera hadir",
+    "pricing_cta": "Bergabung dengan daftar tunggu",
+    "faq_title": "Pertanyaan yang sering diajukan",
+    "faq_subtitle": "Semua yang perlu Anda ketahui sebelum memulai.",
+    "faq_q1": "Apakah saya perlu pengalaman desain?",
+    "faq_a1": "Tidak. Anda cukup menyediakan foto dan detail acara — AI yang menangani penulisan, tema, dan tata letak.",
+    "faq_q2": "Bagaimana tamu mengonfirmasi kehadiran (RSVP)?",
+    "faq_a2": "Setiap undangan memiliki formulir RSVP bawaan. Tamu mengonfirmasi kehadiran dan meninggalkan doa tanpa perlu membuat akun.",
+    "faq_q3": "Bisakah saya memakai foto sendiri?",
+    "faq_a3": "Bisa. Unggah foto sampul, potret pasangan, dan galeri hingga 12 foto.",
+    "faq_q4": "Apakah undangannya ramah di ponsel?",
+    "faq_a4": "Tentu. Setiap undangan dirancang mobile-first dan terbuka seketika di browser — tanpa perlu aplikasi.",
+    "faq_q5": "Berapa biayanya?",
+    "faq_a5": "Membuat undangan gratis. Anda hanya membayar biaya satu kali saat siap mempublikasikan dan membagikannya."
+  },
+  "Counter": {
+    "meta_title": "Penghitung",
+    "meta_description": "Contoh operasi database",
+    "security_powered_by": "Keamanan, deteksi bot, dan pembatasan laju didukung oleh"
+  },
+  "CounterForm": {
+    "presentation": "Penghitung disimpan di database dan ditambah dengan nilai yang Anda berikan.",
+    "label_increment": "Tambahkan sebanyak",
+    "button_increment": "Tambah",
+    "error_increment_range": "Nilai harus antara 1 dan 3"
+  },
+  "CurrentCount": {
+    "count": "Jumlah: {count}"
+  },
+  "About": {
+    "meta_title": "Tentang",
+    "meta_description": "Deskripsi halaman tentang",
+    "about_paragraph": "Selamat datang di halaman Tentang kami! Kami adalah tim individu yang berdedikasi untuk menciptakan perangkat lunak yang luar biasa.",
+    "translation_powered_by": "Terjemahan didukung oleh"
+  },
+  "Portfolio": {
+    "meta_title": "Portofolio",
+    "meta_description": "Selamat datang di halaman portofolio saya!",
+    "presentation": "Selamat datang di halaman portofolio saya! Di sini Anda akan menemukan koleksi karya dan pencapaian saya yang dikurasi dengan cermat. Melalui portofolio ini, saya ingin menampilkan keahlian, kreativitas, dan nilai yang dapat saya berikan pada proyek Anda.",
+    "portfolio_name": "Portofolio {name}",
+    "error_reporting_powered_by": "Pelaporan kesalahan didukung oleh",
+    "coverage_powered_by": "Cakupan kode didukung oleh"
+  },
+  "PortfolioSlug": {
+    "meta_title": "Portofolio {slug}",
+    "meta_description": "Deskripsi portofolio {slug}",
+    "header": "Portofolio {slug}",
+    "content": "Membuat satu set materi promosi dan elemen branding untuk acara korporat. Merancang tema yang menyatu secara visual, mencakup logo, poster, spanduk, dan aset digital. Mengintegrasikan identitas merek klien sambil memberikan pendekatan kontemporer dan inovatif.",
+    "code_review_powered_by": "Peninjauan kode didukung oleh"
+  },
+  "SignIn": {
+    "meta_title": "Masuk",
+    "meta_description": "Masuk ke akun Anda dengan mudah melalui proses login kami yang ramah pengguna."
+  },
+  "SignUp": {
+    "meta_title": "Daftar",
+    "meta_description": "Buat akun dengan mudah melalui proses pendaftaran kami yang intuitif."
+  },
+  "Dashboard": {
+    "meta_title": "Dasbor",
+    "hello_message": "Halo {email}!",
+    "create_invitation": "Buat Undangan",
+    "empty_title": "Belum ada undangan",
+    "empty_description": "Unggah foto dan detail acara, lalu biarkan AI membuatkan undangan pernikahan digital yang indah untuk Anda.",
+    "status_draft": "Draf",
+    "status_preview": "Pratinjau",
+    "status_published": "Aktif",
+    "status_archived": "Diarsipkan",
+    "view_preview": "Lihat pratinjau",
+    "share": "Bagikan",
+    "share_message": "Anda diundang! Buka undangan pernikahan kami: {url}",
+    "copy_link": "Salin link",
+    "copied": "Tersalin",
+    "no_cover": "Tanpa foto sampul",
+    "alternative_message": "Butuh fitur lanjutan? Multi-tenancy & Teams, Roles & Permissions, Shadcn UI, End-to-End Typesafety dengan oRPC, Pembayaran Stripe, Mode Terang / Gelap. Coba <url></url>."
+  },
+  "UserProfile": {
+    "meta_title": "Profil Pengguna"
+  },
+  "DashboardLayout": {
+    "dashboard_link": "Dasbor",
+    "user_profile_link": "Kelola akun Anda",
+    "templates": "Template",
+    "sign_out": "Keluar"
+  },
+  "Template": {
+    "meta_title": "Template",
+    "meta_description": "Deskripsi halaman Template Dasbor",
+    "header": "Template Dasbor",
+    "content": "Ini adalah halaman template dasbor. Anda dapat menggunakan halaman ini sebagai titik awal untuk halaman dasbor Anda."
+  }
+}

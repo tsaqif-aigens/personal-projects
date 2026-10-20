@@ -6,6 +6,17 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
+  resolve: {
+    alias: {
+      // `server-only` throws when imported outside React Server Components.
+      // Server-side unit tests (renderer/validator/sanitizer) must be able to
+      // import those modules, so alias it to a no-op.
+      'server-only': new URL(
+        './node_modules/server-only/empty.js',
+        import.meta.url,
+      ).pathname,
+    },
+  },
   test: {
     coverage: {
       include: ['src/**/*'],
